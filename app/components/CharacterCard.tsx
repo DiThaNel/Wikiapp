@@ -177,7 +177,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                         </div>
                     </div>
 
-                    <div className="w-full h-full pt-0 p-4 bg-[url('https://raw.githubusercontent.com/DiThaNel/Wikiapp/master/wiki/public/img/NEMbg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center relative">
+                    <div className="w-full h-full pt-0 p-4 bg-[url('https://raw.githubusercontent.com/DiThaNel/Wikiapp/master/public/img/NEMbg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center relative">
                         
                         {/* Hexagon Container */}
                         <div className="relative w-[260px] h-[300px] flex items-center justify-center mt-8">
@@ -257,11 +257,11 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
                         </div>
                     </div>
-                    {/* View Details Button - Positioned absolutely at bottom */}
+                    {/* View Details Button */}
                     <Link 
                         href={`/character/${id}`}
                         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[60] px-6 py-1.5 bg-black/80 hover:bg-black text-white text-sm font-semibold rounded-full border border-white/20 hover:border-white/50 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group/btn"
-                        onClick={(e) => e.stopPropagation()} // Prevent card flip
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <span> Ficha </span>
                         <span className="group-hover/btn:translate-x-0.5 transition-transform">→</span>

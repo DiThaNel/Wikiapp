@@ -14,7 +14,8 @@ const CharacterList: React.FC<CharacterListProps> = ({ characters }) => {
     const { searchQuery } = useSearch();
 
     const filteredCharacters = characters.filter(hunter => 
-        hunter.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+        hunter.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        hunter.nem.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (

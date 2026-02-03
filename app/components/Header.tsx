@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <div className="flex-grow">
-            <header className="static w-full text-white shadow-md bg-gradient-to-r from-[#333333] to-[#d4d4d4] opacity-90">
+            <header className="static w-full text-white shadow-md bg-gradient-to-b from-[#333333] to-[#d4d4d4]/10 opacity-90">
                 <div className="px-6 py-4 min-h-[64px] flex items-center justify-between">
                     <div className="flex-grow flex sm:block">
                          {/* Placeholder for Logo  */}
@@ -28,8 +28,8 @@ const Header = () => {
 
                     {/* Search Area */}
                     {!isCharacterPage && (
-                        <div className="relative rounded bg-white/15 hover:bg-white/25 ml-0 w-auto sm:ml-2 sm:w-auto border-[2.5px] border-double border-[#686868] transition-colors">
-                            <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none text-[#686868]">
+                        <div className="relative rounded bg-white/15 hover:bg-white/25 ml-0 w-auto sm:ml-2 sm:w-auto border-[2.5px] border-double border-[#FFF] transition-colors">
+                            <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none text-[#FFF]">
                                 <svg 
                                     className="h-5 w-5" 
                                     fill="currentColor" 
@@ -48,7 +48,7 @@ const Header = () => {
                                 placeholder="Buscar..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="block w-[140px] sm:w-[180px] sm:focus:w-[200px] pl-9 pr-3 py-1.5 text-black placeholder-black/70 bg-transparent rounded focus:outline-none transition-all duration-300 font-sans text-base"
+                                className="block w-[140px] sm:w-[180px] sm:focus:w-[200px] pl-9 pr-3 py-1.5 text-white placeholder-white/70 bg-transparent rounded focus:outline-none transition-all duration-300 font-sans text-base"
                                 aria-label="search"
                             />
                         </div>
