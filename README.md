@@ -1,2 +1,2 @@
 # HunterXHunter WebApp
-HunterXHunter Information App
+HunterXHunter Information App (TypeScript + Next.js + TailwindCSS + React)
