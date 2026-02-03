@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Tilt from 'react-parallax-tilt';
+import Link from 'next/link';
 import { StarDescriptions } from '@/data/characters';
 
 interface CharacterCardProps {
@@ -190,7 +191,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </svg>
 
                             {/* Ability 1 - Top (Refuerzo) */}
-                            <div className="absolute top-[10px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hover:z-50">
+                            <div className="absolute top-[10px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hover:z-[70]">
                                 {habilidad1 && (
                                     <Tooltip content={habilidad1} side="top">
                                         <div className="w-[45px] h-[45px] rounded-full border-2 border-white overflow-hidden bg-black/40 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg">
@@ -201,7 +202,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
 
                             {/* Ability 2 - Top Right (Emision) */}
-                            <div className="absolute top-[75px] right-[17.5px] translate-x-1/2 -translate-y-1/2 z-10 hover:z-50">
+                            <div className="absolute top-[75px] right-[17.5px] translate-x-1/2 -translate-y-1/2 z-10 hover:z-[70]">
                                 {habilidad2 && (
                                     <Tooltip content={habilidad2} side="left">
                                         <div className="w-[45px] h-[45px] rounded-full border-2 border-white overflow-hidden bg-black/40 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg">
@@ -212,7 +213,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
 
                             {/* Ability 3 - Bottom Right (Manipulacion) */}
-                            <div className="absolute bottom-[95px] right-[17.5px] translate-x-1/2 translate-y-1/2 z-10 hover:z-50">
+                            <div className="absolute bottom-[95px] right-[17.5px] translate-x-1/2 translate-y-1/2 z-10 hover:z-[70]">
                                 {habilidad3 && (
                                     <Tooltip content={habilidad3} side="left">
                                         <div className="w-[45px] h-[45px] rounded-full border-2 border-white overflow-hidden bg-black/40 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg">
@@ -223,7 +224,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
 
                             {/* Ability 4 - Bottom (Especializacion) */}
-                            <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 translate-y-1/2 z-10 hover:z-50">
+                            <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 translate-y-1/2 z-10 hover:z-[70]">
                                 {habilidad4 && (
                                     <Tooltip content={habilidad4} side="bottom">
                                         <div className="w-[45px] h-[45px] rounded-full border-2 border-white overflow-hidden bg-black/40 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg">
@@ -234,7 +235,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
 
                             {/* Ability 5 - Bottom Left (Materializacion) */}
-                            <div className="absolute bottom-[95px] left-[17.5px] -translate-x-1/2 translate-y-1/2 z-10 hover:z-50">
+                            <div className="absolute bottom-[95px] left-[17.5px] -translate-x-1/2 translate-y-1/2 z-10 hover:z-[70]">
                                 {habilidad5 && (
                                     <Tooltip content={habilidad5} side="right">
                                         <div className="w-[45px] h-[45px] rounded-full border-2 border-white overflow-hidden bg-black/40 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg">
@@ -245,7 +246,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
 
                             {/* Ability 6 - Top Left (Transmutacion) */}
-                            <div className="absolute top-[75px] left-[17.5px] -translate-x-1/2 -translate-y-1/2 z-10 hover:z-50">
+                            <div className="absolute top-[75px] left-[17.5px] -translate-x-1/2 -translate-y-1/2 z-10 hover:z-[70]">
                                 {habilidad6 && (
                                     <Tooltip content={habilidad6} side="right">
                                         <div className="w-[45px] h-[45px] rounded-full border-2 border-white overflow-hidden bg-black/40 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg">
@@ -256,6 +257,16 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                             </div>
                         </div>
                     </div>
+                    {/* View Details Button - Positioned absolutely at bottom */}
+                    <Link 
+                        href={`/character/${id}`}
+                        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[60] px-6 py-1.5 bg-black/80 hover:bg-black text-white text-sm font-semibold rounded-full border border-white/20 hover:border-white/50 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group/btn"
+                        onClick={(e) => e.stopPropagation()} // Prevent card flip
+                    >
+                        <span> Ficha </span>
+                        <span className="group-hover/btn:translate-x-0.5 transition-transform">→</span>
+                    </Link>
+
                 </div>
 
             </div>
