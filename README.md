@@ -1,2 +1,2 @@
 # Wikiapp
-Wikipedia App 
+HunterXHunter Information App
