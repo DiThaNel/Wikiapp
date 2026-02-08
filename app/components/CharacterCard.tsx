@@ -110,7 +110,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                 <div className="absolute w-full h-full backface-hidden bg-white border-[3px] border-double border-[#979797] rounded-lg shadow-xl" style={{ pointerEvents: isFlipped ? 'none' : 'auto' }}>
                      {/* Header */}
                     {/* Top Section */}
-                    <div className="absolute -top-6 left-4 right-4 flex justify-between items-center px-4 py-4 z-20 bg-gradient-to-r from-[#333333] to-[#d4d4d4] opacity-90 rounded-md shadow-md">
+                    <div className="absolute -top-6 left-4 right-4 flex justify-between items-center px-4 py-4 z-20 bg-gradient-to-r from-[#333333] to-[#d4d4d4] opacity-90 rounded-md shadow-md glitch-fix">
                         {/* Type (Left) */}
                         <Tooltip content={nem} side="bottom">
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm bg-white shrink-0 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg z-30">
@@ -157,7 +157,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                 <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-white border-[3px] border-double border-[#979797] rounded-lg shadow-xl" style={{ pointerEvents: isFlipped ? 'auto' : 'none' }}>
                       {/* Header*/}
                       {/* Top Section */}
-                      <div className="absolute -top-6 left-4 right-4 flex justify-between items-center px-4 py-4 z-20 bg-gradient-to-r from-[#333333] to-[#d4d4d4] opacity-90 rounded-md shadow-md">
+                      <div className="absolute -top-6 left-4 right-4 flex justify-between items-center px-4 py-4 z-20 bg-gradient-to-r from-[#333333] to-[#d4d4d4] opacity-90 rounded-md shadow-md glitch-fix">
                         {/* Type (Left) */}
                         <Tooltip content={nem} side="bottom">
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm bg-white shrink-0 transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-lg z-30">
@@ -274,9 +274,19 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
             <style jsx global>{`
                 .perspective-1000 { perspective: 1000px; }
                 .preserve-3d { transform-style: preserve-3d; }
-                .backface-hidden { backface-visibility: hidden; }
+                .backface-hidden { 
+                    backface-visibility: hidden; 
+                    -webkit-backface-visibility: hidden;
+                }
                 .rotate-y-180 { transform: rotateY(180deg); }
                 .rotate-y-0 { transform: rotateY(0deg); }
+                /* Fix for Firefox/Edge rendering artifacts during flip */
+                .glitch-fix {
+                    backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
+                    transform: translateZ(1px);
+                    transform-style: preserve-3d;
+                }
             `}</style>
             </div>
         </Tilt>
