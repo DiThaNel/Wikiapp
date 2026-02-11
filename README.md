@@ -28,4 +28,4 @@ npm install
 
 Bash
 npm run dev
-- View the app: Open http://localhost:3000 in your browser.
+- Open [http://localhost:3000](http://localhost:3000) to view the application or Vercel Deploy [[https://spa-recipes.vercel.app/](https://sparecipes.vercel.app/)](https://sparecipes.vercel.app/)
